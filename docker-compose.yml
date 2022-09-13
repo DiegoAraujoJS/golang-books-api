@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    ports:
+      - "9010:9010"
+    restart: on-failure
+    command: bash -c "sleep 15"
+  mysql:
+    image: "mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: "samsung"
+      MYSQL_DATABASE: "books"

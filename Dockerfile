@@ -1,7 +1,6 @@
 FROM golang:latest
 WORKDIR /app
-RUN apt-get update && apt-get -y install vim
-COPY ./.vimrc /root
-RUN vim +'PlugInstall --sync' +qa
-COPY go.mod go.sum ./
+COPY . .
 RUN go mod download && go mod verify
+EXPOSE 9010
+CMD ["go", "run", "cmd/main/main.go"]
