@@ -23,10 +23,6 @@ func Connect() {
 	if err != nil {
 		panic(err.Error)
 	}
-	pingErr := d.Ping()
-	if pingErr != nil {
-		panic(pingErr)
-	}
 	fmt.Println("Connected to database" + "books")
 	db = d
 }
