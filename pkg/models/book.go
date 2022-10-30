@@ -2,6 +2,7 @@ package models
 
 import (
 	"database/sql"
+	"fmt"
 	"github.com/DiegoAraujoJS/golang-books-api/pkg/config"
 	"log"
 )
@@ -24,6 +25,7 @@ func (b *Book) CreateBook() *Book {
 }
 
 func GetAllBooks() []Book {
+	fmt.Println("get all books")
 	books, err := db.Query("SELECT * FROM book")
 	if err != nil {
 		return []Book{}
