@@ -1,3 +1,3 @@
-module github.com/DiegoAraujoJS/golang-books-api
+module github.com/DiegoAraujoJS/books-golang
 
 go 1.19
