@@ -2,9 +2,8 @@ package models
 
 import (
 	"database/sql"
-	"log"
-
 	"github.com/DiegoAraujoJS/golang-books-api/pkg/config"
+	"log"
 )
 
 var db *sql.DB
@@ -26,6 +25,9 @@ func (b *Book) CreateBook() *Book {
 
 func GetAllBooks() []Book {
 	books, err := db.Query("SELECT * FROM book")
+	if err != nil {
+		return []Book{}
+	}
 	defer books.Close()
 	if err != nil {
 		panic("error fetching books from DB")

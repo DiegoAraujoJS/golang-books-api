@@ -16,7 +16,7 @@ func Connect() {
 		User:   "root",
 		Passwd: "samsung",
 		Net:    "tcp",
-		Addr:   "mysql",
+		Addr:   "books-golang",
 		DBName: "books",
 	}
 	d, err := sql.Open("mysql", cfg.FormatDSN())
